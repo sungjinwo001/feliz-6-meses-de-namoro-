@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Meses de Amor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            min-height: 100vh;
+        }
+        
+        .dancing-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .heart {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .message-box {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .message-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .petal {
+            position: fixed;
+            background-color: #ffcce6;
+            opacity: 0.6;
+            border-radius: 150% 0 150% 0;
+            animation: falling linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        @keyframes falling {
+            to {
+                top: 100%;
+                transform: rotate(360deg);
+            }
+        }
+        
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio Player (hidden) -->
+    <iframe id="backgroundMusic" width="0" height="0" src="https://www.youtube.com/watch?v=V141wUSkTfk" frameborder="0" allow="autoplay"></iframe>
+    
+    <!-- Floating Hearts (will be added by JS) -->
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="container mx-auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h1 class="dancing-font text-5xl md:text-7xl font-bold text-pink-800 mb-4">
+                    Nossos 6 Meses <i class="fas fa-heart text-red-500 heart"></i>
+                </h1>
+                <p class="text-xl text-pink-700">Cada dia ao seu lado é um presente que eu guardo no coração</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Message 1 -->
+                <div class="message-box rounded-xl p-6 shadow-lg border border-pink-200">
+                    <div class="text-4xl text-pink-600 mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="dancing-font text-2xl text-pink-800 mb-3">Nosso Primeiro Dia</h3>
+                    <p class="text-gray-700">Lembro como se fosse hoje do primeiro dia que te vi. Meu coração sabia que você era especial desde o primeiro momento.</p>
+                </div>
+                
+                <!-- Message 2 -->
+                <div class="message-box rounded-xl p-6 shadow-lg border border-pink-200">
+                    <div class="text-4xl text-pink-600 mb-4">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="dancing-font text-2xl text-pink-800 mb-3">Razões Para Te Amar</h3>
+                    <p class="text-gray-700">1. Seu sorriso ilumina meus dias<br>2. Seu abraço é meu lugar favorito<br>3. Você me faz querer ser melhor</p>
+                </div>
+                
+                <!-- Message 3 -->
+                <div class="message-box rounded-xl p-6 shadow-lg border border-pink-200">
+                    <div class="text-4xl text-pink-600 mb-4">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="dancing-font text-2xl text-pink-800 mb-3">182 Dias</h3>
+                    <p class="text-gray-700">Já se passaram 182 dias desde o momento mágico em que você me disse "sim". 182 dias de descobertas, sorrisos bobos, abraços quentinhos e um amor que só faz crescer. E o que mais quero é passar infinitos dias ao seu lado, vivendo tudo de mais lindo que a vida tem a oferecer.</p>
+                </div>
+                
+                <!-- Message 4 -->
+                <div class="message-box rounded-xl p-6 shadow-lg border border-pink-200">
+                    <div class="text-4xl text-pink-600 mb-4">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3 class="dancing-font text-2xl text-pink-800 mb-3">Nossas Noites</h3>
+                    <p class="text-gray-700">As melhores partes do meu dia são quando estou com você, especialmente aquelas conversas até tarde, quando o mundo parece parar só para nós.</p>
+                </div>
+                
+                <!-- Message 5 -->
+                <div class="message-box rounded-xl p-6 shadow-lg border border-pink-200">
+                    <div class="text-4xl text-pink-600 mb-4">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="dancing-font text-2xl text-pink-800 mb-3">Pequenos Gestos</h3>
+                    <p class="text-gray-700">Amo como você se preocupa com os detalhes, como me manda mensagem só para dizer que está pensando em mim.</p>
+                </div>
+                
+                <!-- Message 6 -->
+                <div class="message-box rounded-xl p-6 shadow-lg border border-pink-200">
+                    <div class="text-4xl text-pink-600 mb-4">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3 class="dancing-font text-2xl text-pink-800 mb-3">Para Sempre</h3>
+                    <p class="text-gray-700">6 meses podem parecer tão pouco, mas cada segundo ao seu lado me fez acreditar que o amor verdadeiro existe. E tudo o que eu mais desejo é passar a eternidade ao seu lado, te amando e te fazendo sentir o quanto você é especial para mim.</p>
+                </div>
+            </div>
+            
+            <!-- Special Message -->
+            <div class="mt-16 max-w-3xl mx-auto text-center bg-white bg-opacity-50 rounded-xl p-8 shadow-xl border border-pink-300 floating">
+                <h2 class="dancing-font text-4xl md:text-5xl text-pink-800 mb-6">Para Minha Amorosa</h2>
+                <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                    Se eu pudesse colocar em palavras tudo o que sinto por você, acho que o mundo inteiro pararia para ouvir, e talvez nunca mais quisesse sair desse momento. Mas, como as palavras parecem tão pequenas diante do que meu coração sente, deixo este gesto simples para tentar expressar um pouquinho do que você significa para mim.
+                </p>
+                <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                     Nestes 6 meses, você não só entrou na minha vida, mas a transformou de um jeito mágico e único, algo que eu nunca imaginei ser possível. Cada risada sua, cada olhar que trocamos, cada segundo ao seu lado é um tesouro que guardo com tanto carinho, e sei que são momentos que jamais vou esquecer. Você fez o meu mundo mais colorido, mais alegre e mais completo. Cada dia ao seu lado é uma nova descoberta, uma nova razão para te amar ainda mais. E eu só posso agradecer por ter você aqui, por ser meu refúgio, minha alegria, meu amor. O que mais eu quero é continuar caminhando ao seu lado, vivendo mais momentos incríveis, criando mais memórias e, principalmente, te fazendo sentir o quanto você é especial para mim. Porque você merece todo o amor, todo o carinho e toda a felicidade do mundo. Nestes 6 meses, você transformou minha vida de formas que nem imaginava possíveis. Cada risada, cada olhar, cada segundo ao seu lado é um tesouro que guardo com carinho.
+                </p>
+                <p class="dancing-font text-3xl text-pink-700">
+                    Obrigado por ser você. Te amo mais do que as palavras podem dizer.
+                </p>
+                <div class="mt-8">
+                    <button onclick="showFinalMessage()" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        Clique Aqui, Amor <i class="fas fa-heart ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Hidden Final Message -->
+            <div id="finalMessage" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+                <div class="bg-white rounded-xl max-w-md mx-auto p-8 text-center">
+                    <div class="text-6xl text-red-500 mb-6">
+                        <i class="fas fa-heart heart"></i>
+                    </div>
+                    <h3 class="dancing-font text-3xl text-pink-800 mb-4">Feliz 6 Meses!</h3>
+                    <p class="text-gray-700 mb-6">Espero que tenha gostado dessa pequena surpresa. É apenas um reflexo do que sinto por você.</p>
+                    <p class="dancing-font text-2xl text-pink-600 mb-6">Você é a melhor coisa que me aconteceu.</p>
+                    <button onclick="hideFinalMessage()" class="bg-pink-500 hover:bg-pink-600 text-white py-2 px-6 rounded-full">
+                        Fechar <i class="fas fa-times ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="text-center py-6 text-pink-800">
+            <p>Feito com <i class="fas fa-heart text-red-500"></i> especialmente para você</p>
+        </div>
+    </div>
+    
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const colors = ['#ff6b6b', '#ff8e8e', '#ffb3b3', '#ffd8d8'];
+            
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                heart.className = 'floating-heart text-2xl text-pink-500 opacity-70';
+                
+                // Random position
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                const delay = Math.random() * 5;
+                const duration = 5 + Math.random() * 10;
+                const size = 0.5 + Math.random() * 1.5;
+                
+                heart.style.left = `${posX}px`;
+                heart.style.top = `${posY}px`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.fontSize = `${size}rem`;
+                heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+                
+                document.body.appendChild(heart);
+            }
+        }
+        
+        // Create falling petals
+        function createPetals() {
+            const colors = ['#ffb6c1', '#ffc0cb', '#ffd1dc', '#ffe4e1'];
+            
+            for (let i = 0; i < 30; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                
+                // Random properties
+                const width = 10 + Math.random() * 20;
+                const height = 15 + Math.random() * 25;
+                const left = Math.random() * window.innerWidth;
+                const delay = Math.random() * 5;
+                const duration = 5 + Math.random() * 15;
+                
+                petal.style.width = `${width}px`;
+                petal.style.height = `${height}px`;
+                petal.style.left = `${left}px`;
+                petal.style.top = `-30px`;
+                petal.style.animationDuration = `${duration}s`;
+                petal.style.animationDelay = `${delay}s`;
+                petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                document.body.appendChild(petal);
+            }
+        }
+        
+        // Show final message
+        function showFinalMessage() {
+            document.getElementById('finalMessage').classList.remove('hidden');
+        }
+        
+        // Hide final message
+        function hideFinalMessage() {
+            document.getElementById('finalMessage').classList.add('hidden');
+        }
+        
+        // Initialize effects when page loads
+        window.onload = function() {
+            createHearts();
+            createPetals();
+            
+            // Auto-play music (might not work due to browser restrictions)
+            try {
+                document.getElementById('backgroundMusic').contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            } catch(e) {
+                console.log("Couldn't auto-play music due to browser restrictions");
+            }
+        };
+    </script>
+</body>
+</html>
